@@ -5,22 +5,22 @@ import { SiMongodb } from "react-icons/si"
 // import { DiRedis } from "react-icons/di"
 import { FaNodeJs } from "react-icons/fa"
 import { BiLogoPostgresql } from "react-icons/bi"
-import { motion } from "framer-motion"
+import { motion, Variants } from "framer-motion"
 import { SiMysql } from "react-icons/si"
 
 const Technologies = () => {
-    const iconVariants = (duration:number) => ({
-        initial: {y:-10},
-        animate:{
-            y:[10,-10],
-            transition:{
-                duration: duration,
-                ease:"linear",
-                repeat: Infinity,
-                repeatType: "reverse"
-            }
-        }
-    })
+    const iconVariants: (duration: number) => Variants = (duration) => ({
+        initial: { y: 0 },
+        animate: {
+          y: [0, -20, 0],
+          transition: {
+            duration,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "loop",
+          },
+        },
+      });
 
   return (
     <div className="border-b border-neutral-800 pb-24">
